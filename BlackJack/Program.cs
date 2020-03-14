@@ -6,7 +6,7 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Let's play some Black Jack!");
         }
     }
 }
