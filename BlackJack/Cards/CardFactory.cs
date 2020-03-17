@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BlackJack.Card
+namespace BlackJack.Cards
 {
     public class CardFactory
     {

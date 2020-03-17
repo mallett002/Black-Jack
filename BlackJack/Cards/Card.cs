@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace BlackJack.Card
+namespace BlackJack.Cards
 {
-    class Card
+    public class Card
     {
         int value;
         string suit;

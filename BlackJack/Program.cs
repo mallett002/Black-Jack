@@ -9,11 +9,11 @@ namespace BlackJack
         {
             Console.WriteLine("Let's play some Black Jack!");
 
-            Game.Game game = new BlackJack.Game.Game();
+            GameManager gameManager = new GameManager();
 
-            game.InitPlayer();
+            gameManager.InitPlayer();
 
-            Console.WriteLine(game.ToString());
+            
         }
     }
 }

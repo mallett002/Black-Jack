@@ -1,21 +1,20 @@
 ﻿using System;
-using BlackJack.Player;
+using BlackJack.Players;
 
 namespace BlackJack.Game
 {
-    public class Game
+    public class GameManager
     {
-        private Player.Player player;
-        private Player.Player dealer;
+        // public getters and setters
+        public Player Player { get; set; }
+        public Player Dealer { get; set; }
 
-        public Game()
+        public GameManager()
         {
-            this.player = new Player.Player();
-            this.dealer = new Player.Player();
-            dealer.Name = "Dealer";
+            this.Player = new Player();
+            this.Dealer = new Player();
+            Dealer.Name = "Dealer";
         }
-
-        // Todo: make getters and setters for player and dealer;
 
         public void InitPlayer()
         {
@@ -23,14 +22,14 @@ namespace BlackJack.Game
 
             string readUserName = Console.ReadLine();
 
-            player.Name = readUserName;
+            Player.Name = readUserName;
 
-            Console.WriteLine("Welcome to the game {0}!", player.Name);
+            Console.WriteLine("Welcome to the game {0}!", Player.Name);
         }
 
         public override string ToString()
         {
-            return "Player one: " + player.Name + "; and Dealer: "+ dealer.Name;
+            return "Player one: " + Player.Name + "; and Dealer: "+ Dealer.Name;
         }
 
     }

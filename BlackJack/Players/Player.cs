@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BlackJack.Player
+namespace BlackJack.Players
 {
-    class Player
+    public class Player
     {
         private string name;
         private Hand cards;
