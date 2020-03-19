@@ -29,7 +29,17 @@ namespace BlackJack.Cards
             ACE
         }
 
-        public string GenerateCardValue()
+        /* PUBLIC METHOD TO GENERATE A CARD */
+        public Card GenerateCard()
+        {
+            Card card = new Card();
+            card.CardValue = GenerateCardValue();
+            card.Suit = GetSuit();
+
+            return card;
+        }
+
+        private string GenerateCardValue()
         {
             int num = random.Next(2, 14);
 
@@ -43,7 +53,7 @@ namespace BlackJack.Cards
             return num.ToString();
         }
 
-        public string GetSuit()
+        private string GetSuit()
         {
             Array values = Enum.GetValues(typeof(Suits));
             Suits suit = (Suits) values.GetValue(random.Next(values.Length));

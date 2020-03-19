@@ -4,26 +4,7 @@ namespace BlackJack.Cards
 {
     public class Card
     {
-        int value;
-        string suit;
-        CardFactory cardFactor;
-
-        public Card()
-        {
-            this.cardFactor = new CardFactory();
-            SetCardValue();
-            SetCardSuit();
-        }
-
-        private void SetCardValue()
-        {
-            string value = cardFactor.GenerateCardValue();
-            this.value = Int32.Parse(value);
-        }
-
-        private void SetCardSuit()
-        {
-            this.suit = cardFactor.GetSuit();
-        }
+        public string CardValue { get; set; }
+        public string Suit { get; set; }
     }
 }

@@ -22,5 +22,17 @@ namespace BlackJack.Players
         {
             this.CardList.AddRange(cards);
         }
+
+        public override string ToString()
+        {
+            string cards = "";
+
+            foreach (Card card in CardList)
+            {
+                cards += "[ " + card.CardValue + " " + card.Suit + " ] ";
+            }
+
+            return cards;
+        }
     }
 }

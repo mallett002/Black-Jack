@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using BlackJack.Players;
+using BlackJack.Cards;
 
 namespace BlackJack.Game
 {
@@ -8,6 +10,7 @@ namespace BlackJack.Game
         // public getters and setters
         public Player Player { get; set; }
         public Player Dealer { get; set; }
+        public CardFactory factory = new CardFactory();
 
         public GameManager()
         {
@@ -16,6 +19,7 @@ namespace BlackJack.Game
             Dealer.Name = "Dealer";
         }
 
+        // Make a new player with a hand of 2 cards
         public void InitPlayer()
         {
             Console.WriteLine("Enter your name: ");
@@ -24,7 +28,35 @@ namespace BlackJack.Game
 
             Player.Name = readUserName;
 
-            Console.WriteLine("Welcome to the game {0}!", Player.Name);
+            SetPlayerCards();
+
+            Console.WriteLine("{0}'s hand: {1}", Player.Name, Player.Hand);
+            Console.WriteLine("dealer's hand: {0}", Dealer.Hand);
+
+        }
+
+        private void SetPlayerCards()
+        {
+            // Player One
+            Card cardOne = factory.GenerateCard();
+            Card cardTwo = factory.GenerateCard();
+
+            List<Card> playerOneCards = new List<Card>();
+            playerOneCards.Add(cardOne);
+            playerOneCards.Add(cardTwo);
+
+            Player.Hand.AddCards(playerOneCards);
+
+            // Dealer
+            Card dealerOne = factory.GenerateCard();
+            Card dealerTwo = factory.GenerateCard();
+
+            List<Card> dealerCards = new List<Card>();
+            dealerCards.Add(dealerOne);
+            dealerCards.Add(dealerTwo);
+
+            Dealer.Hand.AddCards(dealerCards);
+
         }
 
         public override string ToString()
