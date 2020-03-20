@@ -31,7 +31,9 @@ namespace BlackJack.Game
             SetPlayerCards();
 
             Console.WriteLine("{0}'s hand: {1}", Player.Name, Player.Hand);
-            Console.WriteLine("dealer's hand: {0}", Dealer.Hand);
+            Console.WriteLine("Hand value: {0}", Player.Hand.GetHandValue());
+
+
 
         }
 

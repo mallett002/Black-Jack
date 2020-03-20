@@ -21,7 +21,7 @@ namespace BlackJack.Cards
             CLUBS
         }
 
-        enum FaceCard
+        public enum FaceCard
         {
             JACK,
             QUEEN,
@@ -52,6 +52,19 @@ namespace BlackJack.Cards
 
             return num.ToString();
         }
+
+        //public int ParseCardValue(Card card) 
+        //{
+        //    int number;
+        //    bool result = Int32.TryParse(card.CardValue, out number);
+
+        //    if (result)
+        //    {
+        //        return number;
+        //    }
+
+        //    return 10;
+        //}
 
         private string GetSuit()
         {
